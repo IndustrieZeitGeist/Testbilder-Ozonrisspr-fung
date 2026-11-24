@@ -1,0 +1,15 @@
+RubberScope – Testbilder mit bekannten Sollwerten
+=================================================
+
+Zuerst öffnen: Uebersicht_Testbilder.pdf (Anleitung, Sollwerte, Bildübersicht)
+Auswertung im Browser: https://rubberscope-fh-hda.netlify.app
+
+01–06 *.tif         Ozonrissbilder, 1024 × 768 px, Maßstab 2,5 µm/px im TIFF (wird automatisch übernommen)
+png/                dieselben Bilder als PNG ohne Maßstab (dann 2,5 µm/px von Hand eintragen)
+masken/             Sollmasken (für die Seite „Validierung“ → eigene Bilder; Paarung über den Dateinamen)
+Sollwerte.csv       Risszahl, Gesamtlänge, L_A quer, mittlere Breite je Bild (Excel: Semikolon, Dezimalkomma)
+Sollwerte_je_Riss.csv  Lage, Länge, Breite und Winkel jedes einzelnen Risses
+testkarte/          Druckvorlage TK-1 (A4 quer, 100 %), digitale Fassung 60 µm/px, Sollwerte je Riss
+
+Wichtig bei der Auswertung: Dehnrichtung 0 (waagerecht) eintragen.
+Synthetische Prüfbilder, keine echten Proben. Freie Weitergabe für Lehre und Übung.

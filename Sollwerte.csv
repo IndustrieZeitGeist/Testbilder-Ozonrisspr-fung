@@ -1,0 +1,7 @@
+﻿Bild;Inhalt;Risse quer zur Dehnung;Gesamtlänge [mm];L_A quer [mm/mm²];mittlere Breite [µm];Kontrast der Risse [%];Störungen (keine Ozonrisse);Pixelgröße [µm];Dehnrichtung [°]
+01_referenz_ungealtert.tif;Ungealterte Referenz: keine Ozonrisse, nur Poren und eine Riefe;0;0,000;0,0000;;0;14 Poren (rund, sollen vom Formfilter verworfen werden) | 1 Formriefe parallel zur Dehnung (unten, waagerecht): KEIN Ozonriss (Δ ≈ 0°, zählt nicht in L_A,⊥);2,5;0
+02_einfach.tif;Einfach: 6 deutliche Risse, gleichmäßige Beleuchtung;6;3,736;0,7602;12,5;42;;2,5;0
+03_rissnetz.tif;Rissnetz: 16 Risse unterschiedlicher Länge und Breite;16;4,904;0,9977;9,9;38;;2,5;0
+04_beleuchtungsverlauf.tif;Starker Beleuchtungsverlauf und Rauschen (Weber-Kontrast!);14;5,492;1,1173;9,7;36;;2,5;0
+05_stoerungen.tif;Mit Störungen: Poren, Riefe, Kratzer, Staub;10;3,858;0,7849;10,4;38;17 Poren (rund, sollen vom Formfilter verworfen werden) | 1 Formriefe parallel zur Dehnung (unten, waagerecht): KEIN Ozonriss (Δ ≈ 0°, zählt nicht in L_A,⊥) | 1 gerader Kratzer unter 45° zur Dehnrichtung: KEIN Ozonriss (Δ < 60°, zählt nicht in L_A,⊥) | 10 helle Staubpartikel;2,5;0
+06_schwacher_kontrast.tif;Schwacher Kontrast (17 %) nahe der Nachweisgrenze;10;4,011;0,8161;8,2;17;;2,5;0
