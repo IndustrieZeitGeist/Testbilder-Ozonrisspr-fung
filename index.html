@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RubberScope Testbilder</title>
+<meta name="description" content="Synthetische Ozonrissbilder mit bekannten Sollwerten für RubberScope">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: sachlich, freundlich – ein Ausgabeschalter im Labor, kein Werbeplakat.
+   IDEA: die Probenmappe: sechs Bilder wie Präparate nebeneinander, jedes mit Etikett und Sollwerten.
+   PICTURE: die Bildgalerie selbst, oben ein großer Download-Knopf für das komplette Paket.
+   COLOUR and TYPE: Farben der RubberScope-Webseite – Petrol #0b7f8a als Fläche, Tinte #132a35, Inter.
+   LAYOUT: Kopfband in Petrol mit Titel und Paket-Knopf, darunter Anleitung, Galerie, Sollwerttabelle, Testkarte. */
+:root{color-scheme:light dark;
+  --bg:light-dark(#f4f7f8,#0f1b21);--panel:light-dark(#ffffff,#16262e);--ink:light-dark(#132a35,#e4eef2);
+  --ink2:light-dark(#41596a,#a9bcc6);--line:light-dark(#d8e2e7,#26404b);--teal:#0b7f8a;--teal2:light-dark(#0f5d74,#5fd0d6);
+  --warm:light-dark(#b86e0e,#f0a73c);--soft:light-dark(#e2f3f4,#16343a)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;overflow-x:clip}
+.band{padding:clamp(28px,4vw,56px) max(5vw,16px)}
+.wrap{max-width:1180px;margin:0 auto}
+header{background:var(--teal);color:#fff}
+header .wrap{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:28px;align-items:center}
+h1{font-size:clamp(32px,5vw,48px);line-height:1.05;margin:0 0 12px;text-wrap:balance}
+header p{margin:0;font-size:17px;max-width:60ch;color:#e6f6f7}
+header.band a{color:#fff;text-decoration-thickness:1px}
+.pack{background:#fff;color:#132a35;border-radius:16px;padding:20px;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.pack b{display:block;font-size:19px;margin-bottom:4px}
+.pack small{display:block;color:#41596a;margin-bottom:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 18px;border-radius:10px;
+  font:600 16px/1.2 inherit;text-decoration:none;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.btn:focus-visible{outline:3px solid var(--warm);outline-offset:2px}
+.btn.main{background:#132a35;color:#fff;border-color:#132a35;width:100%;font-size:17px}
+.btn.sm{min-height:40px;padding:8px 12px;font-size:15px}
+.msg{min-height:1.4em;font-size:14px;margin-top:8px;color:#41596a}
+h2{font-size:clamp(24px,3vw,32px);line-height:1.1;margin:0 0 18px}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin:0;padding:0;list-style:none;counter-reset:s}
+.steps li{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 18px 18px 64px;position:relative;counter-increment:s}
+.steps li::before{content:counter(s);position:absolute;left:18px;top:16px;width:32px;height:32px;border-radius:50%;background:var(--warm);color:#fff;font-weight:700;display:grid;place-items:center}
+.steps b{display:block}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.card .img{aspect-ratio:4/3;background:#cfd8dc}
+.card img{width:100%;height:100%;object-fit:cover;display:block}
+.card .body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card h3{font-size:18px;margin:0;line-height:1.25}
+.card p{margin:0;color:var(--ink2);font-size:15px}
+.kv{display:grid;grid-template-columns:auto auto;gap:2px 14px;font-size:14px;margin:0}
+.kv dt{color:var(--ink2)}.kv dd{margin:0;text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.row{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+table{border-collapse:collapse;width:100%;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:15px}
+th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:var(--soft);font-weight:600}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.note{font-size:14px;color:var(--ink2);margin-top:10px}
+.tk{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:center}
+.tk img{width:100%;border-radius:12px;border:1px solid var(--line);background:#fff}
+footer{font-size:14px;color:var(--ink2)}
+footer a,.band a{color:var(--teal2)}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.steps{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:600px){header .wrap,.tk{grid-template-columns:minmax(0,1fr)}.grid{grid-template-columns:minmax(0,1fr)}
+  table{font-size:13px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px}.stack td{display:flow-root;border:0;padding:3px 12px;padding-inline-start:9.5em;text-align:start}
+  .stack td::before{content:attr(data-l);float:inline-start;width:9em;margin-inline-start:-9em;white-space:normal;color:var(--ink2)}.stack td:empty{display:none}}
+</style>
+<script>new MutationObserver(()=>{for(const c of document.querySelectorAll('.stack td:not([data-l])')){let i=0,p=c;while(p=p.previousElementSibling)i+=p.colSpan;c.dataset.l=c.closest('table').rows[0].cells[i]?.textContent||''}}).observe(document,{childList:true,subtree:true})</script>
+</head>
+<body>
+<header class="band">
+  <div class="wrap">
+    <div>
+      <h1>RubberScope Testbilder</h1>
+      <p>Sechs synthetische Ozonrissbilder und eine Testkarte mit bekannten Sollwerten – zum Ausprobieren auf
+        <a href="https://rubberscope-fh-hda.netlify.app">rubberscope-fh-hda.netlify.app</a>.</p>
+    </div>
+    <div class="pack">
+      <b>Komplettes Paket</b>
+      <small>ZIP, 6,5 MB · TIFF mit Maßstab, PNG, Sollmasken, Sollwerte, Übersicht als PDF, Testkarte TK-1</small>
+      <a class="btn main" href="RubberScope_Testbilder%20%281%29.zip" download="RubberScope_Testbilder.zip">Alles herunterladen</a>
+          </div>
+  </div>
+</header>
+
+<section class="band">
+  <div class="wrap">
+    <h2>So geht's</h2>
+    <ol class="steps">
+      <li><b>Paket laden und entpacken</b>Die TIFF-Dateien enthalten den Maßstab 2,5 µm/px und sind die beste Wahl.</li>
+      <li><b>Webseite öffnen, Bilder laden</b>Auf der Seite „Analyse“ die Bilder hineinziehen. Bei PNG die Pixelgröße 2,5 µm/px von Hand eintragen.</li>
+      <li><b>Dehnrichtung 0° eintragen</b>Analysieren und die Ergebnisse mit den Sollwerten unten vergleichen.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="band" style="padding-top:0">
+  <div class="wrap">
+    <h2>Die sechs Bilder</h2>
+    <div class="grid" id="grid"></div>
+    <p class="note">Die TIFF-Dateien enthalten den Maßstab 2,5 µm/px; bei PNG die Pixelgröße von Hand eintragen. Die Sollmasken passen zur Seite „Validierung“ der Webseite.</p>
+  </div>
+</section>
+
+<section class="band" style="padding-top:0">
+  <div class="wrap">
+    <h2>Sollwerte</h2>
+    <table class="stack">
+      <thead><tr><th>Bild</th><th class="n">Querrisse</th><th class="n">Gesamtlänge [mm]</th><th class="n">L<sub>A,⊥</sub> [mm/mm²]</th><th class="n">mittl. Breite [µm]</th><th class="n">Kontrast [%]</th></tr></thead>
+      <tbody id="soll"></tbody>
+    </table>
+    <p class="note">Pixelgröße 2,5 µm, Dehnrichtung 0° (waagerecht). L<sub>A,⊥</sub> zählt nur Risse mit mindestens 60° zur Dehnrichtung.</p>
+    <div class="row" style="margin-top:14px">
+      <a class="btn sm" href="Sollwerte.csv" download>Sollwerte.csv</a>
+      <a class="btn sm" href="Sollwerte_je_Riss.csv" download>Sollwerte je Riss (CSV)</a>
+      <a class="btn sm" href="Uebersicht_Testbilder.pdf">Übersicht (PDF)</a>
+    </div>
+  </div>
+</section>
+
+<section class="band" style="padding-top:0">
+  <div class="wrap tk">
+    <div>
+      <h2>Testkarte TK-1</h2>
+      <p>14 Risse mit bekannter Länge, Breite und Richtung, Summe 193,07 mm. Auf A4 quer in 100 % drucken und unter dem Mikroskop oder mit dem Handy fotografieren; die digitale Fassung hat 60 µm/px.</p>
+      <div class="row">
+        <a class="btn sm" href="RubberScope_Testkarte_TK-1.pdf">Druckvorlage (PDF)</a>
+        <a class="btn sm" href="TK-1_sollwerte.csv" download>Sollwerte TK-1 (CSV)</a>
+        <a class="btn sm" href="TK-1_digital_60um.tif" download>Digitale Fassung (TIFF)</a>
+      </div>
+    </div>
+    <img src="data:image/jpeg;base64,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qooooooooooooorH8WxmbQpoh96WSGNfq0qAfqa2KKKKKKKKKKKKKKKKzPEYLacirncbu1xj/ruladFFFFFFFFFFFFI7BFLMcKoyT6Cue+Hlu1v4L0pnGHuYjdv/AL0zGU/q5roqKKKKKKKKKKKR3WNS7sFVRkknAArnlVvF7iSQFdCU5RCMG/P94/8ATL0H8fU/L97ogMDAooooooooooooooooornvA1u1ppN5AV2quqX5Uf7JupGH866GiiiiiiiiiiiiisrW/wB7c6VbZ4lvAzD2RHcf+PKtatFFFFFFFFFFFFFFFFFFFFFFFFFFFFFUPEDmPQdSdTgraykH0+Q1YsLZLOxt7aMYSGJY1HoAAKnoooooooooooqG8s7fULZ7a6iWaB8b426MAc4I7jjp3qYDAwOlFFFFFFFFFFFFFFFFFFV7GySxheJGZg8skxLdcu5cj6AtirFFFFFFFFFFFFFFRS2kM88E8i5kgJaM56EjB/Q1LRRRRRRRRRRRRRRRRRRRRRRRRRRRRRQQGBBAIPBBooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooqC+vItPs5rubd5UKF32jJCjqanooorN03xBZ6rqep6bAl0s+mSJHOZYGRGLruGxiMOMHnHStKiiiiis3XtAtvEVrBbXU13EkNxFcqbadomLI24AlTypPUd60qKKKKKKKKKKKKKKKKKKKKqxXpk1O4stgAhhil3Z67y4x/wCOfrVqiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiio7mCO6t5beUbo5UKMPUEYNZ3hW9e/wDD1jLKSZlj8mXP/PRCUf8A8eU1q0UUUUUUUUUUUUUUVBa3sN49wsJLeRIYmbHBYAE4PfGcfUEdqnoooooooooooooorKtm3eKNRAb7tla5Hp889atFFFFFFFFFFFFFFFFFFQXdy1qiMttPcb5Ej2wgEqGYDcckfKM5PfA6Gp6KKKKKKKKKrC+T+0msCjBxCJlY9GG4ggfTj/voVZoooooooooooooorm/BEp2a5anpa6xdKPYOwl/9q10lFFFFFFFFFFFFFFVNY1BdJ0i+1Fl3LaW8k5Hq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PEn/AH+h/wDjVH/CH3P/AENniT/v9D/8ao/4Q+5/6GzxJ/3+h/8AjVH/AAh9z/0NniT/AL/Q/wDxqj/hD7n/AKGzxJ/3+h/+NUf8Ifc/9DZ4k/7/AEP/AMao/wCEPuf+hs8Sf9/of/jVH/CH3P8A0NniT/v9D/8AGqP+EPuf+hs8Sf8Af6H/AONUf8Ifc/8AQ2eJP+/0P/xqj/hD7n/obPEn/f6H/wCNUf8ACH3P/Q2eJP8Av9D/APGqP+EPuf8AobPEn/f6H/41R/wh9z/0NniT/v8AQ/8Axqj/AIQ+5/6GzxJ/3+h/+NUf8Ifc/wDQ2eJP+/0P/wAao/4Q+5/6GzxJ/wB/of8A41R/wh9z/wBDZ4k/7/Q//GqP+EPuf+hs8Sf9/of/AI1R/wAIfc/9DZ4k/wC/0P8A8ao/4Q+5/wChs8Sf9/of/jVH/CH3P/Q2eJP+/wBD/wDGqP8AhD7n/obPEn/f6H/41R/wh9z/ANDZ4k/7/Q//ABqj/hD7n/obPEn/AH+h/wDjVH/CH3P/AENniT/v9D/8ao/4Q+5/6GzxJ/3+h/8AjVH/AAh9z/0NniT/AL/Q/wDxqj/hD7n/AKGzxJ/3+h/+NVLaeFp7W5inbxNr04jYMYpZYij47HEYOPxreooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooor/2Q==" alt="Testkarte TK-1 mit 14 senkrechten Linien">
+  </div>
+</section>
+
+<footer class="band" style="padding-top:0">
+  <div class="wrap"><p style="margin:0 0 8px">Wie RubberScope rechnet: <a href="RubberScope%20%E2%80%93%20Auswerteverfahren%20und%20Formeln.docx">Auswerteverfahren und Formeln (Word)</a></p>Synthetische Prüfbilder, keine echten Proben. Freie Weitergabe für Lehre und Übung. Erstellt für den Vortrag „RubberScope – Ozonrisse objektiv messen“, Hochschule Darmstadt.</div>
+</footer>
+
+<script>
+{
+  const IMGS = [
+    ['01_referenz_ungealtert', 'Referenz ungealtert', 'Keine Ozonrisse – nur Poren und eine Riefe parallel zur Dehnung.', 0, '0,000', '0,0000', '–', 0],
+    ['02_einfach', 'Einfach', 'Sechs deutliche Risse bei gleichmäßiger Beleuchtung.', 6, '3,736', '0,7602', '12,5', 42],
+    ['03_rissnetz', 'Rissnetz', '16 Risse unterschiedlicher Länge und Breite.', 16, '4,904', '0,9977', '9,9', 38],
+    ['04_beleuchtungsverlauf', 'Beleuchtungsverlauf', 'Starker Helligkeitsverlauf und Rauschen – hier zeigt der Weber-Kontrast seine Stärke.', 14, '5,492', '1,1173', '9,7', 36],
+    ['05_stoerungen', 'Mit Störungen', 'Poren, Riefe, Kratzer unter 45° und Staub; nur die zehn Querrisse zählen.', 10, '3,858', '0,7849', '10,4', 38],
+    ['06_schwacher_kontrast', 'Schwacher Kontrast', 'Risse mit nur 17 % Kontrast, nahe der Nachweisgrenze – gut, um k zu testen.', 10, '4,011', '0,8161', '8,2', 17]
+  ];
+  const esc = t => String(t).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  document.getElementById('grid').innerHTML = IMGS.map(([f, t, d, n, len, la, w]) => `
+    <article class="card">
+      <div class="img"><img src="${esc(f)}.png" loading="lazy" alt="Testbild ${esc(t)}"></div>
+      <div class="body">
+        <h3>${esc(f.slice(0, 2))} · ${esc(t)}</h3>
+        <p>${esc(d)}</p>
+        <dl class="kv"><dt>Querrisse</dt><dd>${n}</dd><dt>L<sub>A,⊥</sub></dt><dd>${esc(la)} mm/mm²</dd><dt>mittl. Breite</dt><dd>${esc(w)}${w === '–' ? '' : ' µm'}</dd></dl>
+        <div class="row">
+          <a class="btn sm" href="${esc(f)}.tif" download>TIFF mit Maßstab</a>
+          <a class="btn sm" href="${esc(f)}.png" download>PNG</a>
+          <a class="btn sm" href="${esc(f)}_maske.png" download>Sollmaske</a>
+        </div>
+      </div>
+    </article>`).join('');
+  document.getElementById('soll').innerHTML = IMGS.map(([f, , , n, len, la, w, c]) =>
+    `<tr><td>${esc(f)}</td><td class="n">${n}</td><td class="n">${esc(len)}</td><td class="n">${esc(la)}</td><td class="n">${esc(w)}</td><td class="n">${c}</td></tr>`).join('');
+
+}
+</script>
+</body>
+</html>
